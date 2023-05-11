@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wedplan/components/profile_sheet.dart';
+import 'package:wedplan/views/components/profile_sheet.dart';
 import 'package:wedplan/views/home/all_image_cake.dart';
 import 'package:wedplan/views/home/all_image_dress.dart';
 import 'data_list_image/list_images.dart';

@@ -2,7 +2,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../components/decoration/input_decoration_style.dart';
+import 'components/decoration/input_decoration_style.dart';
 import 'beranda.dart';
 
 class LoginScreen extends StatefulWidget {
