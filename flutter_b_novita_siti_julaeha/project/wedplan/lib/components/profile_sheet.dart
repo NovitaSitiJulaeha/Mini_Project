@@ -46,7 +46,7 @@ class _ProfileSheetState extends State<ProfileSheet> {
                   backgroundImage: AssetImage('assets/profile.png'),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 20,
                 ),
                 Text(
                   username,
@@ -56,9 +56,6 @@ class _ProfileSheetState extends State<ProfileSheet> {
                     color: Colors.white,
                   ),
                 ),
-                const SizedBox(
-                  height: 13,
-                ),
                 Text(
                   email,
                   style: GoogleFonts.roboto(
@@ -66,6 +63,9 @@ class _ProfileSheetState extends State<ProfileSheet> {
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
                   ),
+                ),
+                const SizedBox(
+                  height: 40,
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -78,9 +78,13 @@ class _ProfileSheetState extends State<ProfileSheet> {
                         ),
                         (route) => false);
                   },
+                  style: ButtonStyle(
+                    minimumSize:
+                        MaterialStateProperty.all(const Size(150.0, 40.0)),
+                  ),
                   child: Text(
                     'Log Out',
-                    style: GoogleFonts.poppins(fontSize: 17),
+                    style: GoogleFonts.roboto(fontSize: 17),
                   ),
                 ),
               ],

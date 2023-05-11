@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:wedplan/models/checklist_model.dart';
 import 'package:wedplan/view_model/checklist_manager.dart';
@@ -16,6 +17,7 @@ class _CreateChecklistState extends State<CreateChecklist> {
   final _taskController = TextEditingController();
   final _notesController = TextEditingController();
   bool _isUpdate = false;
+  bool _isCompleted = false;
 
   @override
   void initState() {
@@ -40,7 +42,7 @@ class _CreateChecklistState extends State<CreateChecklist> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF17203A),
         title: const Text(
-          'Create TAsk Checklist',
+          'Create Task Checklist',
         ),
       ),
       body: SafeArea(
@@ -126,6 +128,14 @@ class _CreateChecklistState extends State<CreateChecklist> {
                   hintText: 'Insert new notes',
                 ),
               ),
+              Checkbox(
+                value: _isCompleted,
+                onChanged: (value) {
+                  setState(() {
+                    _isCompleted = value!;
+                  });
+                },
+              ),
             ],
           ),
         ),
@@ -140,6 +150,7 @@ class _CreateChecklistState extends State<CreateChecklist> {
           final item = ChecklistModel(
             task: _taskController.text,
             notes: _notesController.text,
+            isCompleted: _isCompleted,
           );
           Provider.of<DbManagerChecklist>(context, listen: false)
               .addChecklist(item);
@@ -148,6 +159,7 @@ class _CreateChecklistState extends State<CreateChecklist> {
             id: widget.checklistModels!.id,
             task: _taskController.text,
             notes: _notesController.text,
+            isCompleted: _isCompleted,
           );
           Provider.of<DbManagerChecklist>(context, listen: false)
               .updateChecklist(item);
@@ -157,8 +169,9 @@ class _CreateChecklistState extends State<CreateChecklist> {
       style: ButtonStyle(
         minimumSize: MaterialStateProperty.all(const Size(340.0, 40.0)),
       ),
-      child: const Text(
-        'Create New Checklist',
+      child: Text(
+        'Submit',
+        style: GoogleFonts.roboto(fontSize: 17),
       ),
     );
   }

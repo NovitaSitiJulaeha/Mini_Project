@@ -2,9 +2,10 @@ class ChecklistModel {
   late int? id;
   late String? task;
   late String? notes;
-  late bool? isCompleted;
+  late bool isCompleted;
 
-  ChecklistModel({this.id, this.notes, this.isCompleted, required this.task});
+  ChecklistModel(
+      {this.id, this.notes, this.isCompleted = false, required this.task});
 
   Map<String, dynamic> toMap() {
     return {
@@ -19,6 +20,10 @@ class ChecklistModel {
     id = map['id'];
     task = map['task'];
     notes = map['notes'];
-    isCompleted = map['isCompleted'];
+    isCompleted = map['isCompleted'] is bool
+        ? map['isCompleted']
+        : map['isCompleted'] == 1
+            ? true
+            : false;
   }
 }

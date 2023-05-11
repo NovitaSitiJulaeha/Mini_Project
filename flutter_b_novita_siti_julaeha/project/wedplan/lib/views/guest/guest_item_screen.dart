@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../models/guest_model.dart';
 import '../../view_model/db_manager.dart';
@@ -161,8 +162,9 @@ class _GuestItemScreenState extends State<GuestItemScreen> {
       style: ButtonStyle(
         minimumSize: MaterialStateProperty.all(const Size(340.0, 40.0)),
       ),
-      child: const Text(
+      child: Text(
         'Submit',
+        style: GoogleFonts.roboto(fontSize: 17),
       ),
     );
   }

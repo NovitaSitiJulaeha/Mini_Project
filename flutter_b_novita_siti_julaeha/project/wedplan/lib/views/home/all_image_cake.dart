@@ -13,15 +13,7 @@ class _AllImageCakeState extends State<AllImageCake> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.black,
-            )),
+        backgroundColor: const Color(0xFF17203A),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),

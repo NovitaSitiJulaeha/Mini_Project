@@ -75,6 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextFormField(
+                  autofocus: true,
                   controller: _usernameController,
                   decoration: InputDecorationStyle.inputDecorationStyle(
                     labelText: 'Username',

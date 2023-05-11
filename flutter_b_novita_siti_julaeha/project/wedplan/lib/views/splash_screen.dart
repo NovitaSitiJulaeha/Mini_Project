@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(
-      const Duration(seconds: 2),
+      const Duration(seconds: 3),
       () {
         Navigator.push(
           context,
@@ -30,17 +30,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: SafeArea(
-        child: Column(
-          children: [
-            SizedBox(
-              height: double.infinity,
-              width: double.infinity,
-              child: Image.asset(
-                'assets/splash.jpg',
-              ),
-            ),
-          ],
+        child: SizedBox(
+          height: double.infinity,
+          width: double.infinity,
+          child: Image.network(
+            'https://images.unsplash.com/photo-1612611450433-360c82a57e01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80',
+          ),
         ),
       ),
     );

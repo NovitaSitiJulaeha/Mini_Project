@@ -114,7 +114,7 @@ class DatabaseHelper {
   Future<void> updateChecklist(ChecklistModel checklistModel) async {
     final db = await database;
     await db.update(
-      table1Name,
+      table2Name,
       checklistModel.toMap(),
       where: 'id = ?',
       whereArgs: [checklistModel.id],
@@ -124,7 +124,7 @@ class DatabaseHelper {
   Future<void> deleteChecklist(int id) async {
     final db = await database;
     await db.delete(
-      table1Name,
+      table2Name,
       where: 'id = ?',
       whereArgs: [id],
     );
